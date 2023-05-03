@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> REMDOM NUMBUR </title>
+
+	<script type="text/javascript">
+
+		function getdata()
+		{
+				var arr = [];
+				for (var i=0; i<9;)
+				{
+					var x = Math.floor(Math.random() * 9) + 1;
+					if (!arr.includes(x))
+					{
+						arr.push(x);
+						i++;
+					}
+				}
+				for (var i=0; i<arr.length; i++)
+				{
+					if (arr[i] == 9)
+					 {
+					 	arr[i] = '';
+					 }
+				}
+				for (var i=0; i<arr.length; i++)
+				{
+					document.getElementById('b'+i).value = arr[i];
+				}
+
+				// console.log(arr);
+		}
+
+				window.onload = function() 
+				{
+					getdata();
+				}
+				
+
+
+
+
+
+	</script>
+
+
+</head>
+<body>
+
+	 <h1 align="center"><span>R</span><span>ENDO</span><span>M</span></h1>
+
+	<table align="center">
+	 <tr>
+        <td> <input type="button" name="" id="b0" value="" class="btn"></td>
+		<td> <input type="button" name="" id="b1" value="" class="btn"></td>
+		<td> <input type="button" name="" id="b2" value="" class="btn"></td>
+	 </tr>
+
+	 <tr>
+        <td> <input type="button" name="" id="b3" value="" class="btn"></td>
+		<td> <input type="button" name="" id="b4" value="" class="btn"></td>
+		<td> <input type="button" name="" id="b5" value="" class="btn"></td>
+	 </tr>
+
+	 <tr>
+        <td> <input type="button" name="" id="b6" value="" class="btn"></td>
+		<td> <input type="button" name="" id="b7" value="" class="btn"></td>
+		<td> <input type="button" name="" id="b8" value=" " class="btn"></td>
+	 </tr>
+	</table>
+
+	<style type="text/css">
+
+		input[type="button"]
+		{
+			height: 75px;
+			width: 75px;
+			font-size: 25px;
+			border: 2px solid;
+
+		}
+
+		
+	h1 span:nth-child(even){
+	    text-align: center;
+		overflow: hidden;
+		transition: ease-in-out 0.5s;
+		color: darkorange;
+		border-bottom: 8px solid #a1ff34;
+		letter-spacing: -1em;
+	}
+
+	h1:hover span:nth-child(even){
+		letter-spacing: 0;
+		cursor: progress;
+	}
+
+	h1:hover span:nth-child(2){
+		transition-delay: 0s;
+
+	}
+
+	h1:hover span:nth-child(4){
+		transition-delay: 0.5s;
+
+	}
+
+	h1:hover span:nth-child(6){
+		transition-delay: 1s;
+	}
+
+	</style>
+
+	<p id="amt"></p>
+
+	<!-- <script type="text/javascript"> -->
+
+		<!-- // document.getElementById("amt").innerHTML = Math.floor(Math.random() * 9); -->
+
+	<!-- </script> -->
+
+</body>
+</html>

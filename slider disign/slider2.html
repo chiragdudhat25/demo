@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> SLIDER 2 </title>
+
+	<style type="text/css">
+		
+		
+		.dot
+		{
+			padding: 20px;
+			border-radius: 50%;
+			background-color: grey;
+			border: none;
+			transition: 0.4s;	
+		}
+		
+		.prev
+		{
+			left: 45%;
+			position: absolute;
+		}
+		
+		.next
+		{
+			right: 45%;
+			position: absolute;
+		}
+		
+		.btn:hover
+		{
+			background-color: lightcoral;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		
+		var temp = 0
+		function slider()
+		{
+			var imgname = document.getElementsByClassName('img')
+			var dots = document.getElementsByClassName('dot')
+
+			for(var i = 0; i < imgname.length; i++)
+			{
+				imgname[i].style.display = "none";
+			}
+
+			imgname[temp].style.display = "block";
+		}
+
+		function next()
+		{
+			var imgname = document.getElementsByClassName('img')
+			temp++;
+			if(temp == imgname.length)
+			{
+				temp = 0;
+			}
+			slider();
+		}
+
+		function prev()
+		{
+			var imgname = document.getElementsByClassName('img')
+			if(temp == 0)
+			{
+				temp = imgname.length 
+			}
+			temp--;
+			slider();
+		}
+
+		window.onload = function()
+		{
+			slider();
+		}
+
+
+	</script>
+</head>
+<body>
+
+	<img src="https://www.privatefleet.com.au/wp-content/uploads/2013/11/bmw-3-series-convertible-1024x567.jpg" width="100%" height="600" class="img">
+	<img src="https://infinitig37.com/gallery/g37-vert-10.jpg" width="100%" height="600" class="img">
+	<img src="https://auto.vercity.ru/gallery/img/automobiles/BMW/2014%20BMW%20228i%20Cabrio%20Sport%20Line/900x/2014%20BMW%20228i%20Cabrio%20Sport%20Line%20007.jpg" width="100%" height="600" class="img">
+	<img src="https://fast-autos.net/vehicles/BMW/2009/M3_Convertible/3.jpg" width="100%" height="600" class="img">
+	<img src="https://auto.vercity.ru/gallery/img/automobiles/BMW/2014%20BMW%20435i%20Convertible%20M%20Sport%20Package%20(AU)/900x/2014%20BMW%20435i%20Convertible%20M%20Sport%20Package%20(AU)%20012.jpg" width="100%" height="600" class="img">
+
+	<input type="button" name="" value="<" onclick="prev()" class="dot prev">
+	<input type="button" name="" value=">" onclick="next()" class="dot next">
+
+</body>
+</html>

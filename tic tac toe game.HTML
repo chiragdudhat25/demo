@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>game</title>
+	<style type="text/css">
+		.btn
+		{
+			width:110px;
+			height:110px;
+			border:3px solid black;
+			background-color: white;
+			font-size: 80px;
+			border-radius:20px;
+			color: blue;
+			background-color: skyblue;
+			margin: 10px;
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		var a=0;
+		function amt(b)
+		{
+
+			var k = document.getElementById('btn'+b).value;
+			if(k==' ')
+			{
+				if(a%2==0)
+				{
+					document.getElementById('btn'+b).value = "x";
+				}
+				else
+				{
+					document.getElementById('btn'+b).value = "0";	
+				}
+				a++;
+				checkwin();
+			}
+		}
+
+			function checkwin()
+			{
+				var bt1=document.getElementById('btn1').value
+				var bt2=document.getElementById('btn2').value
+				var bt3=document.getElementById('btn3').value
+				var bt4=document.getElementById('btn4').value
+				var bt5=document.getElementById('btn5').value
+				var bt6=document.getElementById('btn6').value
+				var bt7=document.getElementById('btn7').value
+				var bt8=document.getElementById('btn8').value
+				var bt9=document.getElementById('btn9').value
+
+				win(bt1,bt2,bt3,"x");
+				win(bt4,bt5,bt6,"x");
+				win(bt7,bt8,bt9,"x");
+	            win(bt1,bt5,bt9,"x");
+				win(bt3,bt5,bt7,"x");
+				win(bt1,bt4,bt7,"x");
+				win(bt2,bt5,bt8,"x");
+				win(bt3,bt6,bt9,"x");
+
+				win(bt1,bt2,bt3,"0");
+				win(bt4,bt5,bt6,"0");
+				win(bt7,bt8,bt9,"0");
+	            win(bt1,bt5,bt9,"0");
+				win(bt3,bt5,bt7,"0");
+				win(bt1,bt4,bt7,"0");
+				win(bt2,bt5,bt8,"0");
+				win(bt3,bt6,bt9,"0");
+
+
+				
+			}	
+
+			function win(v1,v2,v3,sign)
+			{
+				if(v1 == sign && v2 == sign && v3 == sign)
+				{
+					alert( sign+"is win")
+				// document.getElementById('gmt').innerText="X is win";
+				document.getElementById("btn1").disabled = true;
+				document.getElementById("btn2").disabled = true;
+				document.getElementById("btn3").disabled = true;
+				document.getElementById("btn4").disabled = true;
+				document.getElementById("btn5").disabled = true;
+				document.getElementById("btn6").disabled = true;
+				document.getElementById("btn7").disabled = true;
+				document.getElementById("btn8").disabled = true;
+				document.getElementById("btn9").disabled = true;
+				}
+				
+			}
+
+
+			function reset()
+			{
+				location.reload();
+				document.getElementById("btn1").value = '';
+				document.getElementById("btn2").value = '';
+				document.getElementById("btn3").value = '';
+				document.getElementById("btn4").value = '';
+				document.getElementById("btn5").value = '';
+				document.getElementById("btn6").value = '';
+				document.getElementById("btn7").value = '';
+				document.getElementById("btn8").value = '';
+				document.getElementById("btn9").value = '';
+
+
+			}
+
+		</script>
+</head>
+<body>
+	<input type="button" name="" id="btn1" value=" " onclick="amt('1')" class="btn">
+	<input type="button" name="" id="btn2" value=" " onclick="amt('2')" class="btn">
+	<input type="button" name="" id="btn3" value=" " onclick="amt('3')" class="btn"><br>
+	<input type="button" name="" id="btn4" value=" " onclick="amt('4')" class="btn">      
+	<input type="button" name="" id="btn5" value=" " onclick="amt('5')" class="btn">
+	<input type="button" name="" id="btn6" value=" " onclick="amt('6')" class="btn"><br>
+	<input type="button" name="" id="btn7" value=" " onclick="amt('7')" class="btn">
+	<input type="button" name="" id="btn8" value=" " onclick="amt('8')" class="btn"> 
+	<input type="button" name="" id="btn9" value=" " onclick="amt('9')" class="btn">
+
+	<!-- <h1 id="gmt"></h1> -->
+
+	<button id="but" onclick="reset()">RESET</button>
+	
+
+
+
+
+</body>
+</html>

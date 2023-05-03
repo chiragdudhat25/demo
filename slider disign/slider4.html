@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> SLIDER 4</title>
+
+	<style type="text/css">
+		
+		
+		.dot
+		{
+			height: 15px;
+			width: 15px;
+			display: inline-block;
+			border-radius: 50%;
+			background-color: black;
+			margin: 5px 2px;	
+		}
+		
+		.prev
+		{
+			left: 45%;
+			position: absolute;
+		}
+		
+		.next
+		{
+			right: 45%;
+			position: absolute;
+		}
+		
+		.btn:hover
+		{
+			background-color: lightgray;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		var temp = 0;
+		
+		function slider()
+		{
+			var imgname = document.getElementsByClassName('img');
+			var dots = document.getElementsByClassName('dot');
+
+			for(var i = 0; i < imgname.length; i++)
+			{
+				imgname[i].style.display = "none";
+			}
+
+			temp ++;
+
+			if(temp > imgname.length)
+			{
+				temp = 1;
+			}
+
+			for(var i = 0; i < dots.length; i++)
+			{
+				dots[i].className = dots[i].className.replace("active","")
+			}
+
+			imgname[temp - 1].style.display = "block";
+			dots[temp - 1].classname += "active"
+			setTimeout(slider,2000);
+		}
+
+			window.onload = function()
+			{
+				slider();
+			}
+		
+
+	</script>
+
+</head>
+<body>
+	<img src="https://www.elte.hu/en/media/2e/70/6326060a6af63b6bc7f9f0d47311129e20bdde848054cf29204a879f303d/stock-boldog-ugralok.jpg" width="100%" height="600" class="img">
+	<img src="https://www.monpays.it/wp-content/uploads/2018/02/Gallery-spiaggia-Mon-Pays-1.jpg" width="100%" height="600" class="img">
+	<img src="https://miro.medium.com/max/1024/1*RchYw0F0uAcRhVf2lJFcBA.jpeg" width="100%" height="600" class="img">
+	<img src="https://www.medbase.ch/fileadmin/user_upload/Bewegungsapparat.jpg" width="100%" height="600" class="img">
+	<img src="https://fb.ru/media/i/2/5/0/5/8/8/9/i/2505889.jpg?1629810011" width="100%" height="600" class="img">
+
+	<!-- <input type="button" name="" value="prev" onclick="prev()" class="btn prev">
+	<input type="button" name="" value="next" onclick="next()" class="btn next">
+	 -->
+	<div style="text-align: center;">
+		
+		<span class="dot" onclick="dot(0)"></span>
+		<span class="dot" onclick="dot(1)"></span>
+		<span class="dot" onclick="dot(2)"></span>
+		<span class="dot" onclick="dot(3)"></span>
+		<span class="dot" onclick="dot(4)"></span>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> SLIDER 5</title>
+
+	<style type="text/css">
+
+		
+
+		.dot
+		{
+			/*margin: 10px;
+			padding: 20px;*/
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+			background-color: grey;
+			border: none;
+			transition: 0.4s;	
+		}
+
+		.prev
+		{
+			position: absolute;
+			top: 30%;
+			left: 3%;
+		}
+
+		.next
+		{
+			position: absolute;
+			top: 30%;
+			right: 3%;
+		}
+
+		.btn:hover
+		{
+			background-color: skyblue;
+		}
+
+
+	</style>
+
+	<script type="text/javascript">
+
+		var temp = 0;
+		var array_len;
+		function slider(n)
+		{
+			var imgname = document.getElementsByClassName('img');
+			var dots = document.getElementsByClassName('dot');
+
+			for(var i = 0; i < imgname.length; i++)
+			{
+				imgname[i].style.display = "none";
+			}
+
+			// imgname[temp].style.display = "block";
+
+			for(var i = 0;i < dots.length; i ++)
+			{
+				dots[i].classname = dots[i].className.replace("active","")
+			}
+
+			array_len = imgname.length;
+
+			if(n > array_len)
+			{
+				temp = 0;
+			}
+
+			if(n < 0)
+			{
+				temp = array_len - 1;
+			}
+
+			imgname[temp].style.display = "block";
+			dots[temp].classname += "active"
+		}
+
+		function dot(n)
+		{
+			slider(temp = n);
+
+		}
+
+		function next()
+		{
+			temp++;
+			slider();
+			tapku();
+		}
+
+		function prev()
+		{
+			temp--;
+			slider();
+			tapku();
+		}
+
+		window.onload = function()
+		{
+			slider();
+			// setTimeout(slider,1000);
+		}
+
+
+	</script>
+
+</head>
+<body>
+
+	<img src="https://cdn.cutithai.com/wp-content/uploads/tiny-living-room-designs-decorating-ideas-design_153060.jpg" height="600" width="100%" class="img">
+	<img src="https://miro.medium.com/max/800/1*EP_NDyvCNrmmGeyyR-zzMg.jpeg" height="600" width="100%" class="img">
+	<img src="https://i.pinimg.com/originals/c9/58/e2/c958e2c85183dccfeb181e502dcac792.jpg" height="600" width="100%" class="img">
+	<img src="https://foyr.com/learn/wp-content/uploads/2022/01/slow-deco.png" height="600" width="100%" class="img">
+	<img src="https://i.pinimg.com/736x/a1/4f/be/a14fbee631f0efaf969f12326f45da5f.jpg" height="600" width="100%" class="img">
+
+	<!-- <input type="button" name="" value="prev" onclick="prev()" class="btn prev">
+	<input type="button" name="" value="next" onclick="next()" class="btn next"> -->
+
+	<div style="text-align: center;">
+		<a href="#1" style=""><img src="https://cdn.cutithai.com/wp-content/uploads/tiny-living-room-designs-decorating-ideas-design_153060.jpg" class="dot" onclick="dot(0)"> </a>
+		<a href="#2" style=""><img src="https://miro.medium.com/max/800/1*EP_NDyvCNrmmGeyyR-zzMg.jpeg" class="dot" onclick="dot(1)"> </a>
+		<a href="#3" style=""><img src="https://i.pinimg.com/originals/c9/58/e2/c958e2c85183dccfeb181e502dcac792.jpg" class="dot" onclick="dot(2)"> </a>
+		<a href="#4" style=""><img src="https://foyr.com/learn/wp-content/uploads/2022/01/slow-deco.png" class="dot" onclick="dot(3)"> </a>
+		<a href="#5" style=""><img src="https://i.pinimg.com/736x/a1/4f/be/a14fbee631f0efaf969f12326f45da5f.jpg" class="dot" onclick="dot(4)"> </a>
+
+	</div>
+
+
+</body>
+</html>

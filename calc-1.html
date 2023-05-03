@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script type="text/javascript">
+		
+		var f_val,s_val,sign;
+		function no(n) {
+			
+			document.getElementById('display').value+=n;
+
+			if(n == 'c')
+			{
+				document.getElementById('display').value="";
+			}
+
+		}
+		function action(s) {
+			f_val=document.getElementById('display').value;
+			document.getElementById('display').value="";
+			sign=s;
+		}
+		function back() {
+			x=document.getElementById('display').value;
+			y=x.substr(0,x.length-1);
+			document.getElementById('display').value=y;
+		}
+		function ans() {
+			s_val=document.getElementById('display').value;
+			
+			if(sign == '+')
+			{
+				document.getElementById('display').value=parseInt(f_val)+parseInt(s_val);
+			}
+
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<table align="center" width="400">
+		<tr>
+			<td colspan="4">
+				<input type="text" id="display" name="" readonly>
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" id="" value="9" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="8" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="7" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="+" onclick="action('+')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="" value="6" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="5" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="4" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="-" onclick="action('-')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="" value="3" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="2" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="1" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="x" onclick="action('*')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="" value="0" onclick="no(this.value)"></td>
+			<td><input type="button" id="" value="C" onclick="no('c')"></td>
+			<td><input type="button" id="" value="=" onclick="ans()"></td>
+			<td><input type="button" id="" value="/" onclick="action('/')"></td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<input type="button" name="" value="Back" onclick="back()">
+			</td>
+		</tr>
+
+	</table>
+
+	<style type="text/css">
+		 table tr td{
+		 	width: 100px;
+		 }
+		input[type="button"]
+		{
+			height: 100px;
+			width: 100px;
+			font-size: 25px;
+		}
+		input[type="text"]
+		{
+			width: calc(100% - 30px);
+			padding: 15px;
+			font-size: 40px;
+		}
+
+	</style>
+
+</body>
+</html>

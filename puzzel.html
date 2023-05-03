@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> PUZZEL </title>
+	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+
+
+	<script type="text/javascript">
+
+		function btn1() 
+		{
+			var bt1 = document.getElementById('b1').value;
+			var bt2 = document.getElementById('b2').value;
+			var bt4 = document.getElementById('b4').value;
+
+			if (bt2 == ' ') 
+			{
+				document.getElementById('b2').value = bt1;
+				document.getElementById('b1').value = " ";
+			}
+			else if (bt4 == ' ') 
+			{
+				document.getElementById('b4').value = bt1;
+				document.getElementById('b1').value = " ";
+			}checkwin()
+		}
+		function btn2() 
+		{
+			var bt1 = document.getElementById('b1').value;
+			var bt2 = document.getElementById('b2').value;
+			var bt3 = document.getElementById('b3').value;
+			var bt5 = document.getElementById('b5').value;
+
+
+			if (bt1  ==' ') 
+			{
+				document.getElementById('b1').value = bt2;
+				document.getElementById('b2').value = " ";
+			}
+			else if (bt3 == ' ') 
+			{
+				document.getElementById('b3').value = bt2;
+				document.getElementById('b2').value = " ";
+			}
+			else if (bt5 == ' ') 
+			{
+				document.getElementById('b5').value  =  bt2;
+				document.getElementById('b2').value  =  " ";
+			}checkwin()
+		}
+		function btn3() 
+		{
+			var bt2 = document.getElementById('b2').value;
+			var bt3 = document.getElementById('b3').value;
+			var bt6 = document.getElementById('b6').value;
+
+			if (bt2 ==  ' ') 
+			{
+				document.getElementById('b2').value = bt3;
+				document.getElementById('b3').value = " ";
+			}
+			else if (bt6 == ' ') 
+			{
+				document.getElementById('b6').value = bt3;
+				document.getElementById('b3').value = " ";
+			}checkwin()
+		}
+		function btn4() 
+		{
+			var bt1 = document.getElementById('b1').value;
+			var bt4 = document.getElementById('b4').value;
+			var bt5 = document.getElementById('b5').value;
+			var bt7 = document.getElementById('b7').value;
+
+			if (bt1==' ') 
+			{
+				document.getElementById('b1').value = bt4;
+				document.getElementById('b4').value = " ";
+			}
+			else if (bt5==' ') 
+			{
+				document.getElementById('b5').value = bt4;
+				document.getElementById('b4').value = " ";
+			}
+			else if (bt7==' ') 
+			{
+				document.getElementById('b7').value = bt4;
+				document.getElementById('b4').value = " ";
+			}checkwin()
+		}
+		function btn5() 
+		{
+			var bt2 = document.getElementById('b2').value;
+			var bt4 = document.getElementById('b4').value;
+			var bt6 = document.getElementById('b6').value;
+			var bt5 = document.getElementById('b5').value;
+			var bt8 = document.getElementById('b8').value;
+
+			if (bt2 == ' ') 
+			{
+				document.getElementById('b2').value = bt5;
+				document.getElementById('b5').value = " ";
+			}
+			else if (bt4 == ' ') 
+			{
+				document.getElementById('b4').value = bt5;
+				document.getElementById('b5').value = " ";
+			}
+			else if (bt6 == ' ') 
+			{
+				document.getElementById('b6').value = bt5;
+				document.getElementById('b5').value = " ";
+			}
+			else if (bt8 == ' ') 
+			{
+				document.getElementById('b8').value = bt5;
+				document.getElementById('b5').value = " ";
+			}checkwin()
+		}
+		function btn6() 
+		{
+			var bt3 = document.getElementById('b3').value;
+			var bt5 = document.getElementById('b5').value;
+			var bt6 = document.getElementById('b6').value;
+			var bt9 = document.getElementById('b9').value;
+
+			if (bt3 == ' ') 
+			{
+				document.getElementById('b3').value = bt6;
+				document.getElementById('b6').value = " ";
+			}
+			else if (bt5 == ' ') 
+			{
+				document.getElementById('b5').value = bt6;
+				document.getElementById('b6').value = " ";
+			}
+			else if (bt9 == ' ') 
+			{
+				document.getElementById('b9').value = bt6;
+				document.getElementById('b6').value = " ";
+			}checkwin()
+		}
+		function btn7() 
+		{
+			var bt4 = document.getElementById('b4').value;
+			var bt7 = document.getElementById('b7').value;
+			var bt8 = document.getElementById('b8').value;
+
+			if (bt4 == ' ') 
+			{
+				document.getElementById('b4').value = bt7;
+				document.getElementById('b7').value = " ";
+			}
+			else if (bt8 == ' ') 
+			{
+				document.getElementById('b8').value = bt7;
+				document.getElementById('b7').value = " ";
+			}checkwin()
+		}
+		function btn8() 
+		{
+			var bt5 = document.getElementById('b5').value;
+			var bt7 = document.getElementById('b7').value;
+			var bt8 = document.getElementById('b8').value;
+			var bt9 = document.getElementById('b9').value;
+
+			if (bt5 == ' ') 
+			{
+				document.getElementById('b5').value=bt8;
+				document.getElementById('b8').value=" ";
+			}
+			else if (bt7 == ' ') 
+			{
+				document.getElementById('b7').value=bt8;
+				document.getElementById('b8').value=" ";
+			}
+			else if (bt9 == ' ') 
+			{
+				document.getElementById('b9').value = bt8;
+				document.getElementById('b8').value =  " ";
+			}checkwin()
+		}
+		function btn9() 
+		{
+			var bt6 = document.getElementById('b6').value;
+			var bt8 = document.getElementById('b8').value;
+			var bt9 = document.getElementById('b9').value;
+
+			if (bt6 == ' ') 
+			{
+				document.getElementById('b6').value = bt9;
+				document.getElementById('b9').value = " ";
+			}
+			else if (bt8 == ' ') 
+			{
+				document.getElementById('b8').value = bt9;
+				document.getElementById('b9').value = " ";
+			}checkwin()
+		}
+
+
+
+		function checkwin()
+			{
+				var ba1=document.getElementById('b1').value;
+				var ba2=document.getElementById('b2').value;
+				var ba3=document.getElementById('b3').value;
+				var ba4=document.getElementById('b4').value;
+				var ba5=document.getElementById('b5').value;
+				var ba6=document.getElementById('b6').value;
+				var ba7=document.getElementById('b7').value;
+				var ba8=document.getElementById('b8').value;
+				var ba9=document.getElementById('b9').value;
+
+				if (ba1 == "1" && ba2 == "2" && ba3 == "3" && ba4 == "4" && ba5 == "5" && ba6 == "6" && ba7 == "7" && ba8 == "8" && ba9 == " " ) 
+				{
+					document.getElementById('winner').innerHTML = "<i class='fa-solid fa-bomb'></i>  <i class='fa-solid fa-bomb'></i> <i class='fa-solid fa-bomb'></i> <i class='fa-solid fa-bomb'></i> <i class='fa-solid fa-bomb'></i> <i class='fa-solid fa-bomb'></i>";
+
+					// document.getElementById('winner').innerHTML = <img src='klematis.jpg'>;
+				}
+			}
+
+	</script>
+	
+
+</head>
+<body>
+
+	<h1>PUZZEL</h1>
+
+<table align="center">
+		
+	<tr>
+        <td> <input type="button" name="" id="b1" value="1" onclick="btn1()" class="btn"></td>
+		<td> <input type="button" name="" id="b2" value="2" onclick="btn2()" class="btn"></td>
+		<td> <input type="button" name="" id="b3" value="3" onclick="btn3()" class="btn"></td>
+	</tr>  
+	<tr>
+        <td> <input type="button" name="" id="b4" value="4" onclick="btn4()" class="btn"></td>
+		<td> <input type="button" name="" id="b5" value="5" onclick="btn5()" class="btn"></td>
+		<td> <input type="button" name="" id="b6" value="6" onclick="btn6()" class="btn"></td>
+	</tr>
+	<tr>
+        <td> <input type="button" name="" id="b7" value="7" onclick="btn7()" class="btn"></td>
+		<td> <input type="button" name="" id="b8" value=" " onclick="btn8()" class="btn"></td>
+		<td> <input type="button" name="" id="b9" value="8" onclick="btn9()" class="btn"></td>
+	</tr>
+
+</table>
+
+		<h3 id="winner"></h3>
+
+	<style type="text/css">
+		
+		input[type="button"]
+		{
+			height: 75px;
+			width: 75px;
+			font-size: 25px;
+			border: 2px solid;
+
+		}
+
+		h1
+		{
+			text-align: center;
+			font-family: roboto;
+		}
+
+	</style>
+
+</body>
+</html>

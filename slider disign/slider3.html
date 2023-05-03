@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> SLIDER 3</title>
+
+	<style type="text/css">
+		
+		.btn
+		{
+			padding: 15px;
+			border-radius: 50%;
+			background-color: grey;
+			border: none;
+			position: absolute;
+			transition: 0.4s;
+		}
+		.dot
+		{
+			height: 15px;
+			width: 15px;
+			display: inline-block;
+			border-radius: 50%;
+			background-color: black;
+			margin: 5px 2px;
+		}
+		
+		.prev
+		{
+			position: absolute;
+			top:36%;
+			left: 3%;
+		}
+		
+		.next
+		{
+			position: absolute;
+			top: 36%;
+			right: 3%;
+		}
+		
+		.btn:hover
+		{
+			background-color: lightgray;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		
+		var temp = 0;
+		var array_len;
+		function slider(n)
+		{
+			var imgname = document.getElementsByClassName('img');
+			var dots = document.getElementsByClassName('dot');
+
+			for(var i = 0; i < imgname.length; i++)
+			{
+				imgname[i].style.display = "none";
+			}
+
+			// imgname[temp].style.display = "block";
+
+			for(var i = 0;i < dots.length; i ++)
+			{
+				dots[i].classname = dots[i].className.replace("active","")
+			}
+
+			array_len = imgname.length;
+
+			if(n > array_len)
+			{
+				temp = 0;
+			}
+
+			if(n < 0)
+			{
+				temp = array_len - 1;
+			}
+
+			imgname[temp].style.display = "block";
+			dots[temp].classname += "active"
+		}
+
+		function dot(n)
+		{
+			slider(temp = n);
+
+		}
+
+		function next()
+		{
+			temp++;
+			slider();
+			tapku();
+		}
+
+		function prev()
+		{
+			temp--;
+			slider();
+			tapku();
+		}
+
+		window.onload = function()
+		{
+			slider();
+			// setTimeout(slider,1000);
+		}
+
+
+	</script>
+</head>
+<body>
+
+	<img src="https://png.pngtree.com/png-clipart/20201213/ourlarge/pngtree-velentines-day-love-and-flowers-png-image_2556840.jpg" width="100%" height="600" class="img">
+	<img src="https://telegraf.com.ua/static/storage/thumbs/1200x630/6/e1/bdb0e52c-04abff67dd8fadc01888babc6109be16.jpg?v=0218_1" width="100%" height="600" class="img">
+	<img src="https://www.myfloralkart.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/h/e/heartyyy_2.jpg" width="100%" height="600" class="img">
+	<img src="https://www.citypng.com/public/uploads/preview/-516102160159k9ytp4sdn.png" width="100%" height="600" class="img">
+	<img src="https://p4.wallpaperbetter.com/wallpaper/259/468/28/day-holiday-love-valentine-s-wallpaper-preview.jpg" width="100%" height="600" class="img">
+
+	<input type="button" name="" value="prev" onclick="prev()" class="btn prev">
+	<input type="button" name="" value="next" onclick="next()" class="btn next">
+	
+	<div style="text-align: center;">
+		<span class="dot" onclick="dot(0)"></span>
+		<span class="dot" onclick="dot(1)"></span>
+		<span class="dot" onclick="dot(2)"></span>
+		<span class="dot" onclick="dot(3)"></span>
+		<span class="dot" onclick="dot(4)"></span>
+	</div>
+
+</body>
+</html>

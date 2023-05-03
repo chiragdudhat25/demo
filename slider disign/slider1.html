@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> SLIDER 1 </title>
+
+	<style type="text/css">
+
+		.btn
+		{
+			padding: 15px;
+			border-radius: 50px;
+			background-color: lightgrey;
+			border: none;
+			position: absolute;
+			transition: 0.5s;
+		}
+
+		.prev
+		{
+			position: absolute;
+			top: 30%;
+			left: 3%;
+		}
+
+		.next
+		{
+			position: absolute;
+			top: 30%;
+			right: 3%;
+		}
+
+		.btn:hover
+		{
+			background-color: skyblue;
+		}
+
+
+	</style>
+
+	<script type="text/javascript">
+
+		var t=0;
+		function slider()
+		{
+			var x = document.getElementsByClassName('img')
+			for (var i = 0; i < x.length ; i++) 
+			{
+				x[i].style.display="none"
+			}
+			x[t].style.display="block"
+		}
+
+		function next()
+		{
+			t++;
+			slider();
+		}
+
+		function prev()
+		{
+			t--;
+			slider();
+		}
+
+		window.onload = function()
+		{
+			slider();
+		}
+
+
+	</script>
+
+
+</head>
+<body>
+
+	<img src="https://i.pinimg.com/originals/f4/00/e4/f400e44495475d049a78d748357b3bde.jpg" height="600" width="100%" class="img">
+	<img src="https://www.zastavki.com/pictures/originals/2017Animals___Under_water_Multicolored_marine_fish_and_corals_under_water_116997_.jpg" height="600" width="100%" class="img">
+	<img src="https://www.desktopbackground.org/download/1600x1200/2011/02/11/155857_download-beautiful-under-sea-water-free-wallpapers_1600x1200_h.jpg" height="600" width="100%" class="img">
+	<img src="https://www.desktopbackground.org/download/3840x2400/2014/04/04/742095_ocean-tropical-underwater-fishes-coral-reef-wallpapers_4288x2848_h.jpg" height="600" width="100%" class="img">
+	<img src="https://www.wallpapers13.com/wp-content/uploads/2018/06/Underwater-animal-world-Coral-reef-coral-in-various-colors-exotic-colorful-fish-sea-horses-Art-Wallpaper-HD-1920x1200.jpg" height="600" width="100%" class="img">
+
+	<input type="button" name="" value="prev" onclick="prev()" class="btn prev">
+	<input type="button" name="" value="next" onclick="next()" class="btn next">
+
+
+
+</body>
+</html>
